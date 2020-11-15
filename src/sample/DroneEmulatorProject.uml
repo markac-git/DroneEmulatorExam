@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>sample.Objects.Battery</OriginalElement>
+  <nodes>
+    <node x="292.30405542605746" y="293.858209396658">sample.Objects.Scene</node>
+    <node x="0.0" y="750.6927977439409">sample.Objects.Battery</node>
+    <node x="997.1662429430335" y="22.492885596549968">sample.UDP.UdpBroadcastServer</node>
+    <node x="729.9014385409123" y="697.8237834613278">sample.UDP.UdpConnector</node>
+    <node x="184.84038740848183" y="956.9630685225129">sample.Objects.Drone</node>
+    <node x="539.1722057500677" y="1017.034611580093">sample.UDP.UdpMessage</node>
+    <node x="57.00307530472878" y="494.38617578358253">sample.Objects.Object</node>
+    <node x="812.6945878113513" y="0.0">sample.Updater</node>
+    <node x="610.0812834216425" y="316.3666313818046">sample.Controller</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="sample.Objects.Battery" target="sample.Objects.Object">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="sample.Updater" target="sample.Controller">
+      <point x="15.65147477731216" y="0.0" />
+      <point x="15.651474777312075" y="0.0" />
+    </edge>
+    <edge source="sample.Objects.Drone" target="sample.UDP.UdpMessage">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="sample.Objects.Drone" target="sample.Objects.Object">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="sample.Controller" target="sample.UDP.UdpBroadcastServer">
+      <point x="-2.8421709430404007E-14" y="6.643725734480881" />
+      <point x="7.593133561781542" y="0.0" />
+    </edge>
+    <edge source="sample.Controller" target="sample.Updater">
+      <point x="-15.651474777312103" y="0.0" />
+      <point x="-15.65147477731216" y="0.0" />
+    </edge>
+    <edge source="sample.Objects.Scene" target="sample.Objects.Object">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="sample.Objects.Drone" target="sample.Objects.Battery">
+      <point x="-12.180310995804234" y="0.0" />
+      <point x="-12.180310995804177" y="0.0" />
+    </edge>
+    <edge source="sample.Controller" target="sample.UDP.UdpConnector">
+      <point x="15.825577311070305" y="0.0" />
+      <point x="15.825577311070333" y="0.0" />
+    </edge>
+    <edge source="sample.UDP.UdpConnector" target="sample.UDP.UdpMessage">
+      <point x="0.0" y="-7.585481013757715" />
+      <point x="-6.648865445470875" y="0.0" />
+    </edge>
+    <edge source="sample.Controller" target="sample.UDP.UdpMessage">
+      <point x="-5.066786009677486" y="0.0" />
+      <point x="-5.066786009677543" y="0.0" />
+    </edge>
+    <edge source="sample.Controller" target="sample.Objects.Object">
+      <point x="-2.8421709430404007E-14" y="-5.059802170343346" />
+      <point x="0.0" y="-5.059802170343289" />
+    </edge>
+    <edge source="sample.UDP.UdpConnector" target="sample.Controller">
+      <point x="-15.825577311070333" y="0.0" />
+      <point x="-15.825577311070276" y="0.0" />
+    </edge>
+    <edge source="sample.Controller" target="sample.Objects.Scene">
+      <point x="2.8421709430404007E-14" y="-5.128584316362776" />
+      <point x="0.0" y="-5.128584316362776" />
+    </edge>
+    <edge source="sample.Controller" target="sample.Objects.Drone">
+      <point x="-6.088413476191619" y="0.0" />
+      <point x="-6.0884134761916755" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Circular" zoom="0.5124826629680999" x="484.5" y="701.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+

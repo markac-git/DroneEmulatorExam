@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <bottom>
+        <HBox BorderPane.alignment="CENTER">
+            <children>
+            <VBox prefHeight="400.0" prefWidth="67.0">
+               <children>
+                        <Button mnemonicParsing="false" onAction="#clearLog" text="Clear log" />
+               </children>
+            </VBox>
+              <TableView fx:id="table" prefHeight="400.0" prefWidth="512.0">
+                  <columns>
+                      <TableColumn prefWidth="64.95659637451172" text="Time">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="time" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn prefWidth="211.8450927734375" text="Message">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="message" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn minWidth="0.0" prefWidth="108.16464233398438" text="Length">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="length" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn minWidth="0.0" prefWidth="125.5" text="IP">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="IpAndString" />
+                          </cellValueFactory>
+                      </TableColumn>
+                  </columns>
+              </TableView>
+                <FlowPane prefHeight="139.0" prefWidth="0.0">
+               <children>
+                      <VBox prefHeight="400.0" prefWidth="224.0">
+                          <children>
+                              <FlowPane alignment="TOP_RIGHT">
+                                  <children>
+                                      <Label text="Broadcast on port: ">
+                                          <FlowPane.margin>
+                                              <Insets top="4.0" />
+                                          </FlowPane.margin>
+                                      </Label>
+                                      <Label fx:id="labelBroadcastPort" text="7007">
+                                          <FlowPane.margin>
+                                              <Insets top="4.0" />
+                                          </FlowPane.margin>
+                                      </Label>
+                                      <ToggleButton fx:id="toggleBtnBroadcast" mnemonicParsing="false" onAction="#toggleBtnBroadcastServer" text="ON/OFF">
+                                          <FlowPane.margin>
+                                              <Insets left="8.0" right="8.0" top="4.0" />
+                                          </FlowPane.margin>
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                                      </ToggleButton>
+                                  </children>
+                              </FlowPane>
+                              <FlowPane alignment="TOP_RIGHT">
+                                  <children>
+                                      <Label text="Reciever on: ">
+                                          <FlowPane.margin>
+                                              <Insets top="4.0" />
+                                          </FlowPane.margin>
+                                      </Label>
+                                      <Label fx:id="labelIp" text="127.0.0.1">
+                                          <FlowPane.margin>
+                                              <Insets top="4.0" />
+                                          </FlowPane.margin>
+                                      </Label>
+                                      <Label text=" : ">
+                                          <FlowPane.margin>
+                                              <Insets top="4.0" />
+                                          </FlowPane.margin>
+                                      </Label>
+                                      <Label fx:id="labelConnectionPort" text="7000">
+                                          <FlowPane.margin>
+                                              <Insets top="4.0" />
+                                          </FlowPane.margin>
+                                      </Label>
+                                      <ToggleButton fx:id="toggleBtnEcho" mnemonicParsing="false" onAction="#toggleBtnEchoServer" text="ON/OFF">
+                                          <FlowPane.margin>
+                                              <Insets left="8.0" right="8.0" top="4.0" />
+                                          </FlowPane.margin>
+                                 <font>
+                                    <Font size="8.0" />
+                                 </font>
+                                      </ToggleButton>
+                                  </children>
+                              </FlowPane>
+                          </children>
+                      </VBox>
+               </children>
+            </FlowPane>
+            </children>
+        </HBox>
+    </bottom>
+   <left>
+      <SplitPane dividerPositions="0.5" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane>
+               <children>
+                  <VBox layoutX="-1.0" layoutY="1.0" prefHeight="489.0" prefWidth="148.0">
+                     <children>
+                        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="589.0" prefWidth="158.0">
+                          <items>
+                            <AnchorPane>
+                                 <children>
+                                    <Text layoutX="13.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Use a package sender to sent UDP packages to local host (127.0.0.1) on port 7000. Recieve packages on port 7007. Use tello commands as your ASCII. eg. &quot;takeoff&quot;, &quot;battery&quot; etc." wrappingWidth="119.19429063796997" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane>
+                                 <children>
+                                    <ToggleButton fx:id="buttonBG" layoutX="37.0" layoutY="106.0" mnemonicParsing="false" onAction="#setToggleBG" text="Day/Night" />
+                                    <Button fx:id="buttonPowerOn" layoutX="39.0" layoutY="146.0" mnemonicParsing="false" onAction="#startDrone" text="Power on" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <Canvas fx:id="canvas" height="627.0" width="643.0" />
+        </items>
+      </SplitPane>
+   </left>
+</BorderPane>
