@@ -6,11 +6,11 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 
-public class UdpBroadcastServer implements Runnable {
+public class UdpBroadcastServer /*implements Runnable*/ {
     private boolean broadcast = true;
     private DatagramSocket socket;
     private int portBroadcast;
-    public String message = "Echoserver is ready on port 7000";
+    //public String message = "Echoserver is ready on port 7000";
 
     public boolean isBroadcast() {
         return broadcast;
@@ -18,23 +18,6 @@ public class UdpBroadcastServer implements Runnable {
 
     public void setBroadcast(boolean broadcast) {
         this.broadcast = broadcast;
-    }
-
-    @Override
-    public void run() {
-        broadcastLoop();
-    }
-
-    public void broadcastLoop() {
-        do {
-            try {
-                Thread.sleep((3000));
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            //if (broadcast) broadcastMessage(message);
-        }
-        while (broadcast);
     }
 
     public void broadcastMessage(String message) {
@@ -51,4 +34,21 @@ public class UdpBroadcastServer implements Runnable {
             e.printStackTrace();
         }
     }
+
+       /* @Override
+    public void run() {
+        //broadcastLoop();
+    }*/
+
+   /* public void broadcastLoop() {
+        do {
+            try {
+                Thread.sleep((3000));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            //if (broadcast) broadcastMessage(message);
+        }
+        while (broadcast);
+    }*/
 }

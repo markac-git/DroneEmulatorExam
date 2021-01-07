@@ -52,7 +52,7 @@ public class Controller {
         //creating instance
         this.broadcastServer = new UdpBroadcastServer();
         //starting new thread calling the run method
-        new Thread(broadcastServer).start();
+        //new Thread(broadcastServer).start();
     }
 
     private void startUdpConnection() {

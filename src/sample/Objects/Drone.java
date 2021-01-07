@@ -88,9 +88,15 @@ public class Drone extends Object implements Runnable{
         } else {
             //using substrings to get last two chars storing it as a value
             if (command.startsWith("up") || command.startsWith("down") || command.startsWith("left") || command.startsWith("right")) {
-                value = Integer.parseInt(command.substring(command.length() - 2));
-                command = command.substring(0, command.length()-2);
+                try {
+                    value = Integer.parseInt(command.substring(command.length() - 2));
+                    command = command.substring(0, command.length() - 2);
+                } catch (NumberFormatException e){
+                    System.out.println(e);
+                }
             }
+
+            //System.out.println(command);
 
             //switch statement that executes a case depending on input
             switch (command) {

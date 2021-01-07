@@ -23,29 +23,11 @@ public class UdpConnector implements Runnable {
 
     public void setupSocket() {
         try {
-
             socket = new DatagramSocket(udpPort);
         } catch (SocketException e) {
             System.out.println("IOEXCEPTION: Tried to create new datagramsocket on " + udpPort);
             System.out.println(e.getMessage());
         }
-    }
-
-    public void sendMessage(String string, InetAddress address) {
-        sendMessage(string.getBytes(), address);
-    }
-
-    public void sendMessage(byte[] bytes, InetAddress address) {
-        DatagramPacket packet = new DatagramPacket(bytes, bytes.length, address, udpPortEcho);
-        try {
-            //socket = new DatagramSocket(udpPort);
-            socket.send(packet);
-        } catch (IOException e) {
-            System.out.println("IOEXCEPTION: Tried to send packet");
-        } finally {
-            //socket.close();
-        }
-
     }
 
     public UdpMessage receiveMessage() {
@@ -100,4 +82,22 @@ public class UdpConnector implements Runnable {
     public void setReceiveMessages(boolean receiveMessages) {
         this.receiveMessages = receiveMessages;
     }
+
+
+       /* public void sendMessage(String string, InetAddress address) {
+        sendMessage(string.getBytes(), address);
+    }*/
+
+   /* public void sendMessage(byte[] bytes, InetAddress address) {
+        DatagramPacket packet = new DatagramPacket(bytes, bytes.length, address, udpPortEcho);
+        try {
+            //socket = new DatagramSocket(udpPort);
+            socket.send(packet);
+        } catch (IOException e) {
+            System.out.println("IOEXCEPTION: Tried to send packet");
+        } finally {
+            //socket.close();
+        }
+
+    }*/
 }
