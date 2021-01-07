@@ -21,11 +21,12 @@ public class UdpBroadcastServer /*implements Runnable*/ {
     }
 
     public void broadcastMessage(String message) {
+        String target = "192.168.0.123";
         try {
             socket = new DatagramSocket();
             socket.setBroadcast(true);
             byte[] buffer = message.getBytes();
-            DatagramPacket packet = new DatagramPacket(buffer, buffer.length, InetAddress.getByName("255.255.255.255"), 7007);
+            DatagramPacket packet = new DatagramPacket(buffer, buffer.length, InetAddress.getByName(target), 8005);
             socket.send(packet);
             socket.close();
         } catch (SocketException e) {

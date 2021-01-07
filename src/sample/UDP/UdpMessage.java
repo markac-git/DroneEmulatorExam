@@ -20,7 +20,6 @@ public class UdpMessage {
         this.ip = ip;
         this.length = message.length();
         this.port = port;
-
     }
 
     public UdpMessage(byte[] message, int msgLength, InetAddress ip, int port) {

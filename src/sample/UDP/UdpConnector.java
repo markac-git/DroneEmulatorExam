@@ -8,7 +8,7 @@ import java.net.*;
 public class UdpConnector implements Runnable {
     private DatagramSocket socket;
     private final int udpPort = 7000;
-    private final int udpPortEcho = 7007;
+    //private final int udpPortEcho = 7007;
     private final Controller messageHandler;
     private boolean receiveMessages = true;
 
@@ -34,7 +34,6 @@ public class UdpConnector implements Runnable {
         byte[] buf = new byte[256];
         DatagramPacket packet = new DatagramPacket(buf, buf.length);
         try {
-            //socket = new DatagramSocket(udpPort);
             System.out.println("waiting for a udp packet on port: " + udpPort);
             socket.receive(packet);
             UdpMessage message = new UdpMessage(packet.getData(), packet.getLength(), packet.getAddress(), packet.getPort());
